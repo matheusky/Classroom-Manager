@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classroom Manager</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/delete.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../scripts/Gapi.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-bar">
+            <a href="index.html"><i class="fa fa-home"></i></a>
+            <a href="lists.html"><i class="fa fa-list"></i></a>
+            <a href="incluir.html"><i class="fa fa-users"></i></a> 
+            <a class="active" href="delete.html"><i class="fa fa-trash"></i></a>
+            <a href="config.html"><i class="fa fa-cog"></i></a>
+        </div>
+    
+        <div class="content">
+            <div class="title">
+                <p style="text-align: center;">Remoção</p>
+            </div>
+            <br>
+            <div class="actions">
+                <label for="delCourses">Remover salas de aula:</label>
+                <input type="file" name="delCourses" id="delCourses">
+                <button onclick="deleteCourses()">Iniciar</button>
+                <br>
+                <br>
+                <label for="delStudents">Remover alunos das salas:</label>
+                <input type="file" name="delStudents" id="delStudents">
+                <button onclick="deleteStudents()">Iniciar</button>
+                <br>
+                <br>
+                <label for="delTeachers">Remover professores da salas:</label>
+                <input type="file" name="delTeachers" id="delTeachers">
+                <button onclick="deleteTeatcher()">Iniciar</button>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <p style="text-align: center; font-size: 20px;">Tarefas automáticas</p>
+                <br>
+                <label for="delAllCourses">Remover todas as salas</label>
+                <button onclick="deleteAllCourses()">Iniciar</button>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p style="text-align: center;">*Após inicio da tarefa não feche a aplicação ou apague a planilha anexada acima*</p>
+                <hr>
+                <br>
+            </div>
+            <br>
+            <div class="console">
+                <p style="text-align: center; font-size: 28px;">Detalhamento</p><br>
+                <textarea name="consol" id="consol" cols="82" rows="10" readonly></textarea>
+                <button class="btnClear" onclick="clearConsole()">Limpar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

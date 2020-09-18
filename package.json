@@ -1,0 +1,36 @@
+{
+  "name": "Classroom-Manager",
+  "version": "1.0.0",
+  "description": "Classroom Manager",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "Matheusky",
+  "license": "MIT",
+  "build": {
+    "appId": "Classroom Manager",
+    "asar": "false",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "src/img/icon.png"
+    },
+    "nsis": {
+      "license": "LICENSE",
+      "oneClick": "false",
+      "allowToChangeInstallationDirectory": "true"
+    }
+  },
+  "devDependencies": {
+    "electron": "^9.3.1",
+    "electron-builder": "^22.8.1"
+  },
+  "dependencies": {
+    "convert-csv-to-json": "0.0.15",
+    "csvjson": "^5.1.0",
+    "googleapis": "^59.0.0"
+  }
+}

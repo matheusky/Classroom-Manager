@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom load</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <style>
+    *{
+        margin:0 auto;
+    }
+    img{
+        width: 90%;
+        height: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    p{
+        font-family: 'Baloo Da 2', cursive;
+        font-weight: bolder;
+        text-align: center;
+        font-size: 30px;
+        color: whitesmoke;
+        margin: 0;
+    }
+    footer{
+        font-family: 'Baloo Da 2', cursive;
+        color: whitesmoke;
+        font-size: 12px;
+    }
+    .fundo{
+        background-color: rgba(37, 37, 37, 0.8);
+        border-radius: 15px;
+        padding: 10px;
+        display: block;
+    }
+    .lds-dual-ring {
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 65%;
+        height: 65%;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid rgb(206, 206, 206);
+        border-color: rgb(206, 206, 206) transparent rgb(206, 206, 206) transparent;
+        animation: lds-dual-ring 1.5s linear infinite;
+    }
+    @keyframes lds-dual-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="fundo">
+        <img src="../img/icon.png">
+    <p>Classroom Manager</p>
+    <br>
+    <div class="lds-dual-ring"></div>
+    <p>Carregando</p>
+    <br>
+    <footer>Created by Matheusky</footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classroom Manager</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/incluir.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../scripts/Gapi.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-bar">
+            <a href="index.html"><i class="fa fa-home"></i></a>
+            <a href="lists.html"><i class="fa fa-list"></i></a>
+            <a class="active" href="incluir.html"><i class="fa fa-users"></i></a> 
+            <a href="delete.html"><i class="fa fa-trash"></i></a>
+            <a href="config.html"><i class="fa fa-cog"></i></a>
+        </div>
+    
+        <div class="content">
+            <div class="title">
+                <p style="text-align: center;">Criação e inclusão</p>
+            </div>
+            <br>
+            <div class="actions">
+                <label for="incCourses">Criar sala:</label>
+                <input type="file" name="incCourses" id="incCourses" accept=".csv">
+                <button onclick="createCourse()">Iniciar</button>
+                <br>
+                <br>
+                <label for="attCourses">Atualizar sala:</label>
+                <input type="file" name="attCourses" id="attCourses" accept=".csv">
+                <button onclick="attCourse()">Iniciar</button>
+                <br>
+                <br>
+                <label for="incTeachers">Inserir professores:</label>
+                <input type="file" name="incTeachers" id="incTeachers" accept=".csv">
+                <button onclick="joinTeatcher()">Iniciar</button>
+                <br>
+                <br>
+                <label for="incStudents">Inserir alunos:</label>
+                <input type="file" name="incStudents" id="incStudents" accept=".csv">
+                <button onclick="joinStudents()">Iniciar</button>
+                <br>
+                <br>
+                <br>
+                <p style="text-align: center;">*Após inicio da tarefa não feche a aplicação ou apague a planilha anexada acima*</p>
+                <hr>
+                <br>
+            </div>
+            <br>
+            <div class="console">
+                <p style="text-align: center; font-size: 28px;">Detalhamento</p><br>
+                <textarea name="consol" id="consol" cols="82" rows="10" readonly></textarea>
+                <button class="btnClear" onclick="clearConsole()">Limpar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
