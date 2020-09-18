@@ -1,2 +1,2 @@
-name,email,id
-Nome aluno(opcional),Email aluno,ID da sala
+id,email
+ID da sala,Email aluno
