@@ -6,3 +6,10 @@ Simples gerenciador da Plataforma Google Classroom, com ele é possível adicion
 
 ``npm run build`` - Gera um instalador NSIS para Windows <br>
 ``npm run start`` - Live test
+
+
+# Disclaimer / aviso Legal
+
+This is not an official Google product.
+
+Este não é um produto oficial do Google
