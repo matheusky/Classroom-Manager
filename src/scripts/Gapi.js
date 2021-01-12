@@ -523,6 +523,33 @@ async function joinStudents() {
     });
   };
 };
+
+async function ArchiveCourses() {
+  clearConsole();
+  setConsole("Iniciando...");
+  const list = await classroom.courses.list({});
+  const data = list.data.courses;
+
+  for(let i=0; i<data.length;i++){
+    await classroom.courses.update({
+      "id": data[i].id,
+      "resource": {
+        "name": data[i].name,
+        "courseState": "ARCHIVED"
+      }
+    }).then(function(response) {
+      // Handle the results here (response.result has the parsed body).
+      setConsole(`Sala ${data[i].name} foi arquivada!`);
+      setConsole(`Progresso:${i+1} de ${data.length}`);
+      console.log("Response", response.result);
+    },
+    function(err) {
+      setConsole(`Erro ao alterar sala ${data[i].name}:`)
+      setConsole(err);
+      console.error("Execute error", err);
+    });
+  };
+};
 //--------------
 
 //---Deletes-------

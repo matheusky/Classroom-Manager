@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Classroom Manager</title>
@@ -8,19 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../scripts/Gapi.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="icon-bar">
             <a href="index.html"><i class="fa fa-home"></i></a>
             <a href="lists.html"><i class="fa fa-list"></i></a>
-            <a class="active" href="incluir.html"><i class="fa fa-users"></i></a> 
+            <a class="active" href="incluir.html"><i class="fa fa-users"></i></a>
             <a href="delete.html"><i class="fa fa-trash"></i></a>
             <a href="config.html"><i class="fa fa-cog"></i></a>
         </div>
-    
+
         <div class="content">
             <div class="title">
-                <p style="text-align: center;">Criação e inclusão</p>
+                <p style="text-align: center;">Criar e modificar</p>
             </div>
             <br>
             <div class="actions">
@@ -44,8 +46,17 @@
                 <button onclick="joinStudents()">Iniciar</button>
                 <br>
                 <br>
+                <hr>
                 <br>
-                <p style="text-align: center;">*Após inicio da tarefa não feche a aplicação ou apague a planilha anexada acima*</p>
+                <p style="text-align: center; font-size: 20px;">Tarefas automáticas</p>
+                <br>
+                <label for="incStudents">Arquivar salas</label>
+                <button onclick="ArchiveCourses()">Iniciar</button>
+                <br>
+                <br>
+                <br>
+                <p style="text-align: center;">*Após inicio da tarefa não feche a aplicação ou apague a planilha anexada
+                    acima*</p>
                 <hr>
                 <br>
             </div>
@@ -58,4 +69,5 @@
         </div>
     </div>
 </body>
+
 </html>
