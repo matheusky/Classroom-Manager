@@ -61,6 +61,9 @@ i{
     padding: 25px;
     border-radius: 20px;
 }
+.console button{
+    vertical-align: middle !important;
+}
 
 textarea {
     resize: none;
@@ -75,4 +78,9 @@ textarea {
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+.downloadGen2{
+    display: none;
+    float: right;
 }

@@ -50,7 +50,7 @@
                 <br>
                 <p style="text-align: center; font-size: 20px;">Tarefas automáticas</p>
                 <br>
-                <label for="incStudents">Arquivar salas</label>
+                <label for="incStudents">Arquivar todas as salas</label>
                 <button onclick="ArchiveCourses()">Iniciar</button>
                 <br>
                 <br>
@@ -65,6 +65,12 @@
                 <p style="text-align: center; font-size: 28px;">Detalhamento</p><br>
                 <textarea name="consol" id="consol" cols="82" rows="10" readonly></textarea>
                 <button class="btnClear" onclick="clearConsole()">Limpar</button>
+                <button class="btnClear" onclick="LogCreator()">Baixar Log</button>
+                <div class="downloadGen2" id="downloadGen2">
+                    <a id="down2" type="text/txt" download="log.txt" style="font-size: 36px;">
+                        <i class="fa fa-download"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

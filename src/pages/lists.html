@@ -57,14 +57,21 @@
             </div>
             <br>
             <div class="downloadGen" id="downloadGen">
-                <a id="down" type="text/csv" download="Planilha.csv" style="font-size: 56px;"><i
-                        class="fa fa-download"></i></a>
+                <a id="down" type="text/csv" download="Planilha.csv" style="font-size: 56px;">
+                    <i class="fa fa-download"></i>
+                </a>
             </div>
             <br>
             <div class="console">
                 <p style="text-align: center; font-size: 28px;">Detalhamento</p><br>
                 <textarea name="consol" id="consol" cols="82" rows="8" readonly></textarea>
                 <button class="btnClear" onclick="clearConsole()">Limpar</button>
+                <button class="btnClear" onclick="LogCreator()">Baixar Log</button>
+                <div class="downloadGen2" id="downloadGen2">
+                    <a id="down2" type="text/txt" download="log.txt" style="font-size: 36px;">
+                        <i class="fa fa-download"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

@@ -1,2 +1,2 @@
-name,section,room,descriptionHeading,description,courseState
-Nome da turma,Codigo/Descrição do curso,Nome da sala(Opcional),Descrição de cabeçalho(Opcional),Descrição da sala(turma) (Opcional),estado da sala(turma) default(ACTIVE): ACTIVE/ARCHIVED/SUSPENDED (Opcional)
+nome,section
+Nome da turma,Codigo/Descrição do curso, ano do curso e etc

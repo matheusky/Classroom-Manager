@@ -48,6 +48,9 @@
                 <label for="delAllCourses">Remover todas as salas</label>
                 <button onclick="deleteAllCourses()">Iniciar</button>
                 <br>
+                <label for="delAllCourses">Remover todas as salas arquivadas</label>
+                <button onclick="deleteArchivedCourses()">Iniciar</button>
+                <br>
                 <br>
                 <br>
                 <br>
@@ -61,6 +64,12 @@
                 <p style="text-align: center; font-size: 28px;">Detalhamento</p><br>
                 <textarea name="consol" id="consol" cols="82" rows="10" readonly></textarea>
                 <button class="btnClear" onclick="clearConsole()">Limpar</button>
+                <button class="btnClear" onclick="LogCreator()">Baixar Log</button>
+                <div class="downloadGen2" id="downloadGen2">
+                    <a id="down2" type="text/txt" download="log.txt" style="font-size: 36px;">
+                        <i class="fa fa-download"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
