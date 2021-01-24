@@ -610,7 +610,7 @@ async function deleteCourses() {
       "id": planilhaJson[i].id
     }).then(function (response) {
       // Handle the results here (response.result has the parsed body).
-      setConsole(`Sala ${planilhaJson[i].id} excluida!`);
+      setConsole(`Sala de ID:${planilhaJson[i].id} foi excluida!`);
       setConsole(`Progresso:${i + 1} de ${planilhaJson.length}`);
       console.log("Response", response.result);
     },
@@ -655,7 +655,7 @@ async function deleteStudents() {
   const planilhaJson = await csvToJson.fieldDelimiter(',').getJsonFromCsv(file.path);
 
   for (let i = 0; i < planilhaJson.length; i++) {
-    await classroom.courses.teachers.delete({
+    await classroom.courses.students.delete({
       "courseId": planilhaJson[i].id,
       "userId": planilhaJson[i].email
     }).then(function (response) {
