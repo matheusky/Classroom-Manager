@@ -67,7 +67,9 @@ function loader() {
 function listCourses() {
   clearConsole();
   setConsole("Carregando...");
+  var type = document.getElementById("stats").value;
   classroom.courses.list({
+    "courseStates": type
   }, (err, res) => {
     clearConsole();
     if (err) return setConsole(`Erro:\n${err}`);
@@ -87,8 +89,9 @@ function listCourses() {
 function listIDs() {
   clearConsole();
   setConsole("Carregando...");
-
+  var type = document.getElementById("stats").value;
   classroom.courses.list({
+    "courseStates": type
   }, (err, res) => {
     clearConsole();
     if (err) return setConsole(`A API retornou um erro: ${err}`);
