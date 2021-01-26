@@ -29,12 +29,24 @@
 
                 <div class="list">
                     <p>Salas de aula <i class="fa fa-arrow-down"></i></p>
-                    <p>Listagem das salas</p>
+                    <br>
+                    <label for="stats">Listagem das salas:</label>
+                    <select id="stats">
+                        <option value="ARCHIVED">Arquivadas</option>
+                        <option value="ACTIVE" selected>Ativas</option>
+                    </select>
                     <button onclick="listCourses()">Iniciar</button>
-                    <p>Listagem das salas com IDs</p>
+                    <br><br>
+                    <label for="stats">Listagem das salas com IDs:</label>
+                    <select id="stats">
+                        <option value="ARCHIVED">Arquivadas</option>
+                        <option value="ACTIVE" selected>Ativas</option>
+                    </select>
                     <button onclick="listIDs()">Iniciar</button>
                 </div>
+
                 <hr>
+
                 <div class="list">
                     <p>Listar inseridos nas salas <i class="fa fa-arrow-down"></i></p>
                     <p for="listAllStudents">Listar Alunos</p>
@@ -42,7 +54,9 @@
                     <p for="listAllTeatcher">Listar Professores</p>
                     <button onclick="listAllTeatcher()">Iniciar</button>
                 </div>
+
                 <hr>
+
                 <div class="list">
                     <p>Planilhas CSV <i class="fa fa-arrow-down"></i></p>
                     <p>Planilha geral</p>
@@ -54,6 +68,8 @@
                     <p>Planilha dos alunos</p>
                     <button onclick="CSVStudents()">Gerar</button>
                 </div>
+
+
             </div>
             <br>
             <div class="downloadGen" id="downloadGen">
