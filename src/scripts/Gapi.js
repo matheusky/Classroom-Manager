@@ -89,7 +89,7 @@ function listCourses() {
 function listIDs() {
   clearConsole();
   setConsole("Carregando...");
-  var type = document.getElementById("stats").value;
+  var type = document.getElementById("stats2").value;
   classroom.courses.list({
     "courseStates": type
   }, (err, res) => {
@@ -171,6 +171,85 @@ async function listAllTeatcher() {
   };
 
 }
+
+async function CouseDetails() {
+  var idCourse = document.getElementById("Gcourse").value;
+
+  if (idCourse == "") {
+    document.getElementById("Gcourse").value = "Digite uma ID";
+  } else {
+    document.getElementById("Cprof").value = "Carregando...";
+    document.getElementById("Calun").value = "Carregando...";
+
+    //---DetailsCourse-------
+    await classroom.courses.get({
+      "id": idCourse
+    }).then(function (response) {
+      // Handle the results here (response.result has the parsed body).
+      // console.log("Response", response);
+      document.getElementById("Cname").value = response.data.name;
+      document.getElementById("Cstate").value = response.data.courseState;
+      document.getElementById("Clink").value = response.data.alternateLink;
+      document.getElementById("Ccreate").value = response.data.creationTime;
+      document.getElementById("Clastup").value = response.data.updateTime;
+      document.getElementById("Cdrive").value = response.data.teacherFolder.alternateLink;
+    }, function (err) {
+      console.error("Execute error", err);
+      document.getElementById("Cname").value = "ID Error";
+      document.getElementById("Cstate").value = "ID Error";
+      document.getElementById("Clink").value = "ID Error";
+      document.getElementById("Ccreate").value = "ID Error";
+      document.getElementById("Clastup").value = "ID Error";
+      document.getElementById("Cdrive").value = "ID Error";
+    });
+
+    //---DetailsCourseTeachers-------
+    await classroom.courses.teachers.list({
+      "courseId": idCourse
+    }).then(function (response) {
+      // Handle the results here (response.result has the parsed body).
+      // console.log("Response", response);
+      if (response.data.teachers && response.data.teachers.length) {
+        document.getElementById("Cprof").value = "";
+        response.data.teachers.forEach((teachers) => {
+          document.getElementById("Cprof").value += `${teachers.profile.name.fullName}` + ' \n';
+          document.getElementById("Cprof").scrollTop = document.getElementById("Cprof").scrollHeight;
+        });
+      } else {
+        document.getElementById("Cprof").value = "";
+        document.getElementById("Cprof").value = "Nenhum Professor na sala...";
+      };
+    }, function (err) {
+      console.error("Execute error", err);
+      document.getElementById("Cprof").value = "";
+      document.getElementById("Cprof").value = err;
+    });
+
+    //---DetailsCourseStudent
+    await classroom.courses.students.list({
+      "courseId": idCourse
+    })
+      .then(function (response) {
+        // Handle the results here (response.result has the parsed body).
+        // console.log("Response", response);
+        if (response.data.students && response.data.students.length) {
+          document.getElementById("Calun").value = "";
+          response.data.students.forEach((students) => {
+            document.getElementById("Calun").value += `${students.profile.name.fullName}` + ' \n';
+            document.getElementById("Calun").scrollTop = document.getElementById("Calun").scrollHeight;
+          });
+        } else {
+          document.getElementById("Calun").value = "";
+          document.getElementById("Calun").value = "Nenhum Professor na sala...";
+        };
+      },
+        function (err) {
+          console.error("Execute error", err);
+          document.getElementById("Calun").value = "";
+          document.getElementById("Calun").value = err;
+        });
+  };
+};
 //-----------
 
 //--CSVs------

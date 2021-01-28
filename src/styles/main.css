@@ -49,10 +49,10 @@ i{
     color: white;
 }
 
-.title{
+.title p{
     text-align: center;
     font-weight: bolder;
-    font-size: 28px;
+    font-size: 21px;
 }
 
 .console{

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Classroom Manager</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/course.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../scripts/Gapi.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon-bar">
+            <a href="index.html"><i class="fa fa-home"></i></a>
+            <a href="lists.html"><i class="fa fa-list"></i></a>
+            <a class="active" href="course.html"><i class="fa fa-file"></i></a>
+            <a href="incluir.html"><i class="fa fa-users"></i></a>
+            <a href="delete.html"><i class="fa fa-trash"></i></a>
+            <a href="config.html"><i class="fa fa-cog"></i></a>
+        </div>
+
+        <div class="content">
+            <div class="title">
+                <p>Informações de sala</p>
+            </div><br>
+            <div class="desc">
+                <div class="actions">
+                    <label for="Gcourse">Insira o ID da sala:</label>
+                    <input id="Gcourse" type="text" />
+                    <button onclick="CouseDetails()">Consultar</button>
+
+                    <div class="details">
+                        <label for="Cname">Nome:</label>
+                        <input id="Cname" type="text" disabled />
+                        <br><br>
+                        <label for="Cstate">Estado:</label>
+                        <input id="Cstate" type="text" disabled />
+                        <br><br>
+                        <label for="Clink">Link:</label>
+                        <input id="Clink" type="text" disabled />
+                        <br><br>
+                        <label for="Ccreate">Data de criação:</label>
+                        <input id="Ccreate" type="text" disabled />
+                        <br><br>
+                        <label for="Clastup">Ultima modificação:</label>
+                        <input id="Clastup" type="text" disabled />
+                        <br><br>
+                        <label for="Cdrive">Drive da sala:</label>
+                        <input id="Cdrive" type="text" disabled />
+                        <br><br>
+                        <label for="Cprof">Professores:</label>
+                        <textarea id="Cprof" rows="7"></textarea>
+                        <br><br>
+                        <label for="Calun">Alunos:</label>
+                        <textarea  id="Calun" rows="8"></textarea>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
