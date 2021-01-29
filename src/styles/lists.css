@@ -1,23 +1,22 @@
-.actions{
+.actions {
     background-color: #3d3d3d;
     padding: 25px;
     border-radius: 20px;
     width: 95%;
     display: flex;
-    align-content: space-between;
 }
 
-.list{
+.list {
     width: 95%;
     text-align: center;
     padding: 25px;
 }
 
-.list p{
+.list p {
     margin-top: 20px;
 }
 
-.list button{
+.list button {
     text-align: center;
     color: white;
     font-weight: bold;
@@ -27,7 +26,7 @@
     height: 25px;
 }
 
-.btnClear{
+.btnClear {
     text-align: center;
     color: white;
     font-weight: bold;
@@ -37,7 +36,7 @@
     height: 45px;
 }
 
-.downloadGen{
+.downloadGen {
     display: none;
     margin-left: auto;
     margin-right: auto;
@@ -46,9 +45,8 @@
     text-align: center;
     width: 15%;
     background-color: #5f5f5f;
-
 }
 
-.downloadGen i:hover{
+.downloadGen i:hover {
     color: rgb(0, 0, 0);
 }

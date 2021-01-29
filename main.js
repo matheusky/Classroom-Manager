@@ -7,8 +7,10 @@ let mainWindow;
 app.on('ready', () => {
   // create main browser window
   mainWindow = new BrowserWindow({
-    width: 1024,
-    height: 768,
+    width: 1050,
+    height: 650,
+    minWidth: 850,
+    minHeight: 500,
     icon:path.join(__dirname, 'src/img/icon.png'),
     autoHideMenuBar:'true',
     center:'true',
@@ -16,7 +18,7 @@ app.on('ready', () => {
       nodeIntegration: true
     }
   });
-  mainWindow.setResizable(false);
+  mainWindow.setResizable(true);
   // create a new `splash`-Window 
   splash = new BrowserWindow({width: 400, height: 600, center: true, transparent: true, frame: false, alwaysOnTop: true});
   splash.loadFile(path.join(__dirname, 'src/pages/load.html'));

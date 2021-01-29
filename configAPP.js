@@ -44,7 +44,7 @@ function getNewToken(oAuth2Client, callback) {
     scope: SCOPES,
   });
 
-  console.log('Autorize esse aplicativo a fazer as alterações no Classroom através deste link:', authUrl);
+  console.log('LINK DE AUTENTICAÇÃO:', authUrl);
 
   const rl = readline.createInterface({
     input: process.stdin,
@@ -52,7 +52,7 @@ function getNewToken(oAuth2Client, callback) {
   });
 
 
-  rl.question('Digite o código de acesso fornecido pelo Google APIs:', (code) => {
+  rl.question('Digite o código de acesso fornecido:', (code) => {
 
     rl.close();
 

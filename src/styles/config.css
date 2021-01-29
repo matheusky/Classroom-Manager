@@ -1,11 +1,11 @@
-.desc{
+.desc {
     background-color: #3d3d3d;
     padding: 25px;
     border-radius: 20px;
     text-align: center;
 }
 
-.desc p{
+.desc p {
     font-weight: bold;
     font-size: 20px;
 }
@@ -42,16 +42,16 @@
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
-  
+
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
 }
 
-button{
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  background-color: rgb(104, 104, 104);
-  border-radius: 5px;
+button {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(104, 104, 104);
+    border-radius: 5px;
 }

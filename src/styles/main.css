@@ -1,9 +1,9 @@
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
-body{
+body {
     background-color: #292929;
 }
 
@@ -21,23 +21,23 @@ body{
     color: white;
     font-size: 36px;
 }
-  
+
 .icon-bar a:hover {
     background-color: rgb(49, 49, 49);
     border-bottom-right-radius: 15px;
 }
-  
+
 .active {
     background-color: #6d77ff;
     border-bottom-right-radius: 15px;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: space-between;
 }
 
-.content{
+.content {
     width: 85%;
     margin-top: 1%;
     margin-right: auto;
@@ -45,23 +45,24 @@ body{
     color: whitesmoke;
 }
 
-i{
+i {
     color: white;
 }
 
-.title p{
+.title p {
     text-align: center;
     font-weight: bolder;
     font-size: 21px;
 }
 
-.console{
+.console {
     background-color: #3d3d3d;
     text-align: center;
     padding: 25px;
     border-radius: 20px;
 }
-.console button{
+
+.console button {
     vertical-align: middle !important;
 }
 
@@ -72,15 +73,41 @@ textarea {
     font-size: 18px;
     font-weight: bold;
     border-radius: 15px;
-    padding: 0px 15px 0px;
+    padding: 15px;
     width: 95%;
 }
 
-::-webkit-scrollbar {
-    display: none;
+textarea::-webkit-scrollbar {
+    width: 30px;
 }
 
-.downloadGen2{
+textarea::-webkit-scrollbar-track {
+    background-color: #4b4b4b;
+    border-radius: 50px;
+}
+
+.downloadGen2 {
     display: none;
     float: right;
+}
+
+/* -------- scrollbar -------- */
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #292929;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
 }
