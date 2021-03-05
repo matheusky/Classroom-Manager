@@ -14,16 +14,21 @@
     height: 25px;
 }
 
-.btnClear {
+.downloadGen {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    padding: 15px;
     text-align: center;
-    color: white;
-    font-weight: bold;
-    background-color: rgb(104, 104, 104);
-    border-radius: 5px;
-    width: 60px;
-    height: 45px;
+    width: 15%;
+    background-color: #5f5f5f;
 }
 
-.downloadGen{
-    display: none;
+.downloadGen i:hover {
+    color: rgb(0, 0, 0);
+}
+
+span{
+    color: white;
 }

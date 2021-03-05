@@ -6,19 +6,23 @@
     <title>Classroom Manager</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/lists.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="../scripts/comp.js"></script>
     <script src="../scripts/Gapi.js"></script>
+    <script src="../scripts/Clists.js"></script>
+    <script src="../scripts/csvs.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="icon-bar">
-            <a href="index.html"><i class="fa fa-home"></i></a>
-            <a class="active" href="lists.html"><i class="fa fa-list"></i></a>
-            <a href="course.html"><i class="fa fa-file"></i></a>
-            <a href="incluir.html"><i class="fa fa-users"></i></a>
-            <a href="delete.html"><i class="fa fa-trash"></i></a>
-            <a href="config.html"><i class="fa fa-cog"></i></a>
+            <a href="index.html"><span class="material-icons">home</span></a>
+            <a class="active" href="lists.html"><span class="material-icons">list_alt</span></a>
+            <a href="gmail.html"><span class="material-icons">badge</span></a>
+            <a href="course.html"><span class="material-icons">school</span></a>
+            <a href="incluir.html"><span class="material-icons">person_add</span></a>
+            <a href="delete.html"><span class="material-icons">person_remove</span></a>
+            <a href="config.html"><span class="material-icons">settings</span></a>
         </div>
 
         <div class="content">
@@ -54,6 +58,12 @@
                     <button onclick="listAllStudents()">Iniciar</button>
                     <p for="listAllTeatcher">Listar Professores</p>
                     <button onclick="listAllTeatcher()">Iniciar</button>
+                    <p>Listar salas do aluno</p>
+                    <input type="text" name="alun" id="alun">
+                    <button onclick="getStudent()">Consultar</button>
+                    <p>Listar salas do professor</p>
+                    <input type="text" name="prof" id="prof">
+                    <button>Consultar</button>
                 </div>
 
                 <hr>
@@ -74,8 +84,8 @@
             </div>
             <br>
             <div class="downloadGen" id="downloadGen">
-                <a id="down" type="text/csv" download="Planilha.csv" style="font-size: 56px;">
-                    <i class="fa fa-download"></i>
+                <a id="down" type="text/csv" onclick="dl()" style="font-size: 56px;">
+                    <span class="material-icons">download_for_offline</span>
                 </a>
             </div>
             <br>
@@ -85,8 +95,8 @@
                 <button class="btnClear" onclick="clearConsole()">Limpar</button>
                 <button class="btnClear" onclick="LogCreator()">Baixar Log</button>
                 <div class="downloadGen2" id="downloadGen2">
-                    <a id="down2" type="text/txt" download="log.txt" style="font-size: 36px;">
-                        <i class="fa fa-download"></i>
+                    <a id="down2" type="text/txt" onclick="dl()" download="log de listagem.txt" style="font-size: 36px;">
+                        <span class="material-icons">download_for_offline</span>
                     </a>
                 </div>
             </div>

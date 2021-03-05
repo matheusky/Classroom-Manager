@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Manager</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/gmailcreateplan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="../scripts/comp.js"></script>
+    <script src="../scripts/Gapi.js"></script>
+    <script src="../scripts/Gusers.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="title">
+            <p>Criar planilha Gmail</p>
+        </div>
+        <br>
+        <div class="actions">
+            <label for="plandata">Inserir planilha de dados:</label>
+            <input type="file" name="plandata" id="plandata">
+            <button onclick="load()">Carregar</button>
+            <br><br><br>
+            <p>Selecione dados de cabeçalho referente aos dados abaixo</p>
+            <br><br>
+            <label for="namecolun">Nome:</label>
+            <select id="namecolun">
+            </select>
+            <br><br>
+            <label for="emailcolun">Email:</label>
+            <select id="emailcolun">
+            </select>
+            <label for="domaincheck">Inserir dominio:</label>
+            <input type="checkbox" name="domaincheck" id="domaincheck" onclick="showopt()">
+            <input id="domopt" type="text" name="domopt" style="display: none;" placeholder="@dominio.com.br">
+            <br><br>
+            <label for="orgpath">Org path:</label>
+            <input id="orgpath" type="text" name="orgpath" placeholder="/Alunos">
+            <br><br>
+            <label for="senhacolun">Senha:</label>
+            <select id="senhacolun">
+            </select>
+            <br><br>
+            <button id="dlw" style="display: none;" onclick="process()">Gerar</button><br>
+            <br>
+            <div class="downloadGen" id="downloadGen">
+                <a id="down" type="text/csv" onclick="dl()" style="font-size: 56px;">
+                    <span class="material-icons">download_for_offline</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

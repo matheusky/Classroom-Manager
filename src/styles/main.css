@@ -17,9 +17,20 @@ body {
 .icon-bar a {
     display: block;
     text-align: center;
-    padding: 16px;
     color: white;
-    font-size: 36px;
+    padding: 10px;
+}
+
+.material-icons{
+    font-size: 45px!important;
+}
+
+.material-icons{
+    color: white!important;
+}
+
+.material-icons:hover{
+    color: #6d77ff;
 }
 
 .icon-bar a:hover {

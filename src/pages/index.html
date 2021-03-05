@@ -6,19 +6,20 @@
     <title>Classroom Manager</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="../scripts/Gapi.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="../scripts/comp.js"></script>
 </head>
 
 <body onload="loader()">
     <div class="container">
         <div class="icon-bar">
-            <a class="active" href="index.html"><i class="fa fa-home"></i></a>
-            <a href="lists.html"><i class="fa fa-list"></i></a>
-            <a href="course.html"><i class="fa fa-file"></i></a>
-            <a href="incluir.html"><i class="fa fa-users"></i></a>
-            <a href="delete.html"><i class="fa fa-trash"></i></a>
-            <a href="config.html"><i class="fa fa-cog"></i></a>
+            <a class="active" href="index.html"><span class="material-icons">home</span></a>
+            <a href="lists.html"><span class="material-icons">list_alt</span></a>
+            <a href="gmail.html"><span class="material-icons">badge</span></a>
+            <a href="course.html"><span class="material-icons">school</span></a>
+            <a href="incluir.html"><span class="material-icons">person_add</span></a>
+            <a href="delete.html"><span class="material-icons">person_remove</span></a>
+            <a href="config.html"><span class="material-icons">settings</span></a>
         </div>
 
         <div class="content">
@@ -35,32 +36,38 @@
                 <div class="iconDetails">
                     <div class="ic">
                         <a href="lists.html">
-                            <i class="fa fa-list"></i>
+                            <span class="material-icons">list_alt</span>
                             <p>Listagens</p>
                         </a>
                     </div>
                     <div class="ic">
+                        <a href="gmail.html">
+                            <span class="material-icons">badge</span>
+                            <p>GMails</p>
+                        </a>
+                    </div>
+                    <div class="ic">
                         <a href="course.html">
-                            <i class="fa fa-file"></i>
+                            <span class="material-icons">school</span>
                             <p>Detalhes de sala</p>
                         </a>
                     </div>
                     <div class="ic">
                         <a href="incluir.html">
-                            <i class="fa fa-users"></i>
+                            <span class="material-icons">person_add</span>
                             <p>Incluir / Criar salas, professores e alunos</p>
                         </a>
                     </div>
                     <div class="ic">
                         <a href="delete.html">
-                            <i class="fa fa-trash"></i>
+                            <span class="material-icons">person_remove</span>
                             <p>Remover / Excluir salas, professores e alunos</p>
                         </a>
                     </div>
                     <div class="ic">
                         <a href="config.html">
-                            <i class="fa fa-cog"></i>
-                            <p>configurações</p>
+                            <span class="material-icons">settings</span>
+                            <p>Config.</p>
                         </a>
                     </div>
                 </div>
@@ -72,15 +79,15 @@
                 <div class="Pdetails">
                     <div class="pdl">
                         <p>Planilha para criar salas</p><br>
-                        <a href="../csvs/exemplo criar sala.csv" download><i class="fa fa-download"></i></a>
+                        <a href="../csvs/exemplo criar sala.csv" download><span class="material-icons">download_for_offline</span></a>
                     </div>
                     <div class="pdl">
                         <p>Planilha para incluir alunos</p><br>
-                        <a href="../csvs/exemple incluir aluno.csv" download><i class="fa fa-download"></i></a>
+                        <a href="../csvs/exemple incluir aluno.csv" download><span class="material-icons">download_for_offline</span></a>
                     </div>
                     <div class="pdl">
                         <p>Planilha para incluir professores</p><br>
-                        <a href="../csvs/exemplo incluir professor.csv" download><i class="fa fa-download"></i></a>
+                        <a href="../csvs/exemplo incluir professor.csv" download><span class="material-icons">download_for_offline</span></a>
                     </div>
                 </div>
                 <br>
@@ -90,15 +97,15 @@
                 <div class="Pdetails">
                     <div class="pdl">
                         <p>Planilha para remover salas</p><br>
-                        <a href="../csvs/exemple remover sala.csv" download><i class="fa fa-download"></i></a>
+                        <a href="../csvs/exemple remover sala.csv" download><span class="material-icons">download_for_offline</span></i></a>
                     </div>
                     <div class="pdl">
                         <p>Planilha para remover alunos</p><br>
-                        <a href="../csvs/exemple remover aluno.csv" download><i class="fa fa-download"></i></a>
+                        <a href="../csvs/exemple remover aluno.csv" download><span class="material-icons">download_for_offline</span></i></a>
                     </div>
                     <div class="pdl">
                         <p>Planilha para remover professores</p><br>
-                        <a href="../csvs/exemple remover professor.csv" download><i class="fa fa-download"></i></a>
+                        <a href="../csvs/exemple remover professor.csv" download><span class="material-icons">download_for_offline</span></i></a>
                     </div>
                 </div>
             </div>

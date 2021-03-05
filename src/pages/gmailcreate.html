@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Manager</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/gmailcreateplan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="../scripts/comp.js"></script>
+    <script src="../scripts/Gapi.js"></script>
+    <script src="../scripts/Gusers.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="title">
+            <p>Criar email</p>
+        </div>
+        <br>
+        <div class="actions">
+            <label for="plandata">Inserir planilha de dados:</label>
+            <input type="file" name="plandata" id="plandata">
+            <button onclick="">Carregar</button>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <p>Criar email avulsos</p><br>
+            <label for="Ufname">First name:</label>
+            <input type="text" name="Ufname" id="Ufname" placeholder="Nome">
+            <br><br>
+            <label for="Ulname">Last Name:</label>
+            <input type="text" name="Ulname" id="Ulname" placeholder="Sobrenome">
+            <br><br>
+            <label for="Uemail">Email:</label>
+            <input type="text" name="Uemail" id="Uemail" placeholder="user@domain.com.br">
+            <br><br>
+            <label for="Upass">Password:</label>
+            <input type="text" name="Upass" id="Upass" placeholder="********">
+            <br><br>
+            <label for="org">Org Path:</label>
+            <input type="text" name="org" id="org" placeholder="/Aluno">
+            <br>
+            <button onclick="createEmail()">Criar</button>
+            <br><br>
+            <p id="msg"></p>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -6,39 +6,39 @@
     <title>Classroom Manager</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/delete.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="../scripts/comp.js"></script>
     <script src="../scripts/Gapi.js"></script>
+    <script src="../scripts/Cdelete.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="icon-bar">
-            <a href="index.html"><i class="fa fa-home"></i></a>
-            <a href="lists.html"><i class="fa fa-list"></i></a>
-            <a href="course.html"><i class="fa fa-file"></i></a>
-            <a href="incluir.html"><i class="fa fa-users"></i></a>
-            <a class="active" href="delete.html"><i class="fa fa-trash"></i></a>
-            <a href="config.html"><i class="fa fa-cog"></i></a>
+            <a href="index.html"><span class="material-icons">home</span></a>
+            <a href="lists.html"><span class="material-icons">list_alt</span></a>
+            <a href="gmail.html"><span class="material-icons">badge</span></a>
+            <a href="course.html"><span class="material-icons">school</span></a>
+            <a href="incluir.html"><span class="material-icons">person_add</span></a>
+            <a class="active" href="delete.html"><span class="material-icons">person_remove</span></a>
+            <a href="config.html"><span class="material-icons">settings</span></a>
         </div>
 
         <div class="content">
-            <div class="title">
-                <p style="text-align: center;">Remoção</p>
-            </div>
             <br>
             <div class="actions">
                 <label for="delCourses">Remover salas de aula:</label>
-                <input type="file" name="delCourses" id="delCourses">
+                <input type="file" name="delCourses" id="delCourses" accept=".csv, .xlsx">
                 <button onclick="deleteCourses()">Iniciar</button>
                 <br>
                 <br>
                 <label for="delStudents">Remover alunos das salas:</label>
-                <input type="file" name="delStudents" id="delStudents">
+                <input type="file" name="delStudents" id="delStudents" accept=".csv, .xlsx">
                 <button onclick="deleteStudents()">Iniciar</button>
                 <br>
                 <br>
                 <label for="delTeachers">Remover professores da salas:</label>
-                <input type="file" name="delTeachers" id="delTeachers">
+                <input type="file" name="delTeachers" id="delTeachers" accept=".csv, .xlsx">
                 <button onclick="deleteTeatcher()">Iniciar</button>
                 <br>
                 <br>
@@ -68,8 +68,8 @@
                 <button class="btnClear" onclick="clearConsole()">Limpar</button>
                 <button class="btnClear" onclick="LogCreator()">Baixar Log</button>
                 <div class="downloadGen2" id="downloadGen2">
-                    <a id="down2" type="text/txt" download="log.txt" style="font-size: 36px;">
-                        <i class="fa fa-download"></i>
+                    <a id="down2" type="text/txt" onclick="dl()" download="log de exclusao.txt" style="font-size: 36px;">
+                        <span class="material-icons">download_for_offline</span>
                     </a>
                 </div>
             </div>

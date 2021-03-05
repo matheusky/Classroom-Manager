@@ -24,6 +24,18 @@
     height: 45px;
 }
 
-.downloadGen{
-    display: none;
+.btnA{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(104, 104, 104);
+    border-radius: 5px;
+    width: 65px;
+    height: 25px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.btnA:hover{
+    background-color: #818181;
 }

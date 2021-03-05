@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Classroom Manager</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/gmail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="../scripts/comp.js"></script>
+    <script src="../scripts/Gapi.js"></script>
+    <script src="../scripts/Gusers.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon-bar">
+            <a href="index.html"><span class="material-icons">home</span></a>
+            <a href="lists.html"><span class="material-icons">list_alt</span></a>
+            <a class="active" href="gmail.html"><span class="material-icons">badge</span></a>
+            <a href="course.html"><span class="material-icons">school</span></a>
+            <a href="incluir.html"><span class="material-icons">person_add</span></a>
+            <a href="delete.html"><span class="material-icons">person_remove</span></a>
+            <a href="config.html"><span class="material-icons">settings</span></a>
+        </div>
+
+        <div class="content">
+            <div class="title">
+                <p>Gmail</p>
+            </div>
+            <br>
+            <div class="actions">
+                <label for="GMchecker">Verificar Email:</label>
+                <input type="text" name="GMchecker" id="GMchecker">
+                <button onclick="Gcheck()">Consultar</button>
+                <br><br><hr><br>
+                <p>Tratamento de planilha:</p>
+                <br>
+                <label for="Suser">Suspender Usuarios:</label>
+                <input type="file" name="Suser" id="Suser">
+                <button onclick="SuspUser()">Carregar</button>
+                <br><br><br>
+                <a class="btnA" href="./gmailcreate.html" target="_blank" rel="noopener noreferrer">Criar Emails</a>
+                <a class="btnA" href="./gmailcreateplan.html" target="_blank" rel="noopener noreferrer">Gerar planilha p/ GADM</a>
+                <a class="btnA" href="#" target="_blank" rel="noopener noreferrer">Excluir Emails</a>
+            </div>
+            <br>
+            <div class="console">
+                <p style="text-align: center; font-size: 28px;">Detalhamento</p><br>
+                <textarea name="consol" id="consol" cols="82" rows="10" readonly></textarea>
+                <button class="btnClear" onclick="clearConsole()">Limpar</button>
+                <button class="btnClear" onclick="LogCreator()">Baixar Log</button>
+                <div class="downloadGen2" id="downloadGen2">
+                    <a id="down2" type="text/txt" onclick="dl()" download="log.txt" style="font-size: 36px;">
+                        <span class="material-icons">download_for_offline</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

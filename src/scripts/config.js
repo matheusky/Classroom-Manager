@@ -1,6 +1,3 @@
-var child_process = require('child_process');
-var path = require('path');
-var fs = require('fs');
 
 const CREDENTIALS_PATH = path.resolve(__dirname,"../tokens/credentials.json");
 const CREDENTIALS_PATH_ORIGIN = path.join(__dirname,"../../credentials.json");
