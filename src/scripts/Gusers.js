@@ -17,6 +17,8 @@ async function Gcheck() {
       setConsole(`Org Path: ${response.data.orgUnitPath}`);
       setConsole("");
       setConsole(`Arquivado: ${response.data.archived}`);
+      setConsole("");
+      setConsole(`Suspenso: ${response.data.suspended}`);
 
     },
       function (err) { setConsole(`Erro: ${err.message}`); });
@@ -182,6 +184,131 @@ async function SuspUser() {
       setConsole(`Email:${planilhaJson[i].email}`);
       setConsole(`Nome:${response.data.name.fullName}`);
       setConsole("Foi Suspenso.");
+      setConsole("---------------------------------------------");
+    },
+      function (err) {
+        //console.error("Execute error", err);
+        setConsole(`Erro:${err.message}`);
+      });
+  };
+};
+
+async function DellUser() {
+  clearConsole();
+  setConsole("Iniciando...");
+  const file = document.getElementById("DellUser").files[0];
+  var extension = file.name.split('.').pop();
+  if (extension == "xlsx") {
+    var workbook = XLSX.readFile(file.path);
+    var sheet_name_list = workbook.SheetNames;
+    var planilhaJson = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+    setConsole("Planilha XLSX Carregada...");
+  };
+  if (extension == "csv") {
+    var planilhaJson = csvToJson.fieldDelimiter(',').getJsonFromCsv(file.path);
+    setConsole("Planilha CSV Carregada...");
+  };
+
+  for (let i = 0; i < planilhaJson.length; i++) {
+    await googleSDK.users.delete({
+      "userKey": planilhaJson[i].email
+    }).then(function (response) {
+      // Handle the results here (response.result has the parsed body).
+      //console.log("Response", response);
+      setConsole("");
+      setConsole(`Email:${planilhaJson[i].email}`);
+      setConsole(`Nome:${response.data.name.fullName}`);
+      setConsole("Foi Excluido.");
+      setConsole("---------------------------------------------");
+    },
+      function (err) {
+        //console.error("Execute error", err);
+        setConsole(`Erro:${err.message}`);
+      });
+  };
+};
+
+async function susUser() {
+  clearConsole();
+  email = document.getElementById("sususer").value;
+  if (email == "" || email == undefined) {
+    setConsole("Foi Digite email valido.");
+  } else {
+    await googleSDK.users.update({
+      "userKey": email,
+      "resource": {
+        "suspended": true
+      }
+    }).then(function (response) {
+      // Handle the results here (response.result has the parsed body).
+      //console.log("Response", response);
+      setConsole(`Email:${email}`);
+      setConsole(`Nome:${response.data.name.fullName}`);
+      setConsole("Foi suspenso.");
+      setConsole("---------------------------------------------");
+    },
+      function (err) {
+        //console.error("Execute error", err);
+        setConsole(`Erro:${err.message}`);
+      });
+  };
+};
+
+async function freeUser() {
+  clearConsole();
+  email = document.getElementById("freUser").value;
+  if (email == "" || email == undefined) {
+    setConsole("Foi Digite email valido.");
+  }else{
+    await googleSDK.users.update({
+      "userKey": email,
+      "resource": {
+        "suspended": false
+      }
+    }).then(function (response) {
+      // Handle the results here (response.result has the parsed body).
+      //console.log("Response", response);
+      setConsole(`Email:${email}`);
+      setConsole(`Nome:${response.data.name.fullName}`);
+      setConsole("Foi liberado.");
+      setConsole("---------------------------------------------");
+    },
+      function (err) {
+        //console.error("Execute error", err);
+        setConsole(`Erro:${err.message}`);
+      });
+  };
+};
+
+async function freeUsers() {
+  clearConsole();
+  setConsole("Iniciando...");
+  const file = document.getElementById("freeUsers").files[0];
+  var extension = file.name.split('.').pop();
+  if (extension == "xlsx") {
+    var workbook = XLSX.readFile(file.path);
+    var sheet_name_list = workbook.SheetNames;
+    var planilhaJson = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+    setConsole("Planilha XLSX Carregada...");
+  };
+  if (extension == "csv") {
+    var planilhaJson = csvToJson.fieldDelimiter(',').getJsonFromCsv(file.path);
+    setConsole("Planilha CSV Carregada...");
+  };
+
+  for (let i = 0; i < planilhaJson.length; i++) {
+    await googleSDK.users.update({
+      "userKey": planilhaJson[i].email,
+      "resource": {
+        "suspended": false
+      }
+    }).then(function (response) {
+      // Handle the results here (response.result has the parsed body).
+      //console.log("Response", response);
+      setConsole("");
+      setConsole(`Email:${planilhaJson[i].email}`);
+      setConsole(`Nome:${response.data.name.fullName}`);
+      setConsole("Foi Liberado.");
       setConsole("---------------------------------------------");
     },
       function (err) {
