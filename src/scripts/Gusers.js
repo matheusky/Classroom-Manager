@@ -132,6 +132,8 @@ async function createEmail() {
   const Ugpass = document.getElementById('Upass').value;
   const orgpath = document.getElementById('org').value;
 
+  //console.log(Ufrname, Ultname, Ugemail, Ugpass, orgpath);
+
   await googleSDK.users.insert({
     "resource": {
       "name": {
@@ -140,8 +142,8 @@ async function createEmail() {
       },
       "password": Ugpass,
       "primaryEmail": Ugemail,
-      "changePasswordAtNextLogin": true,
-      "orgUnitPath": orgpath
+      "orgUnitPath": orgpath,
+      "changePasswordAtNextLogin": true
     }
   }).then(function (response) {
     // Handle the results here (response.result has the parsed body).
@@ -153,6 +155,44 @@ async function createEmail() {
       document.getElementById('msg').innerHTML = "Status: Erro...";
 
     });
+};
+
+async function createEmails() {
+  const file = document.getElementById("plandata").files[0];
+  var extension = file.name.split('.').pop();
+  if (extension == "xlsx") {
+    var workbook = XLSX.readFile(file.path);
+    var sheet_name_list = workbook.SheetNames;
+    var planilhaJson = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+    console.log("xlsx");
+  };
+  if (extension == "csv") {
+    var planilhaJson = csvToJson.fieldDelimiter(',').getJsonFromCsv(file.path);
+    console.log("csv");
+  };
+
+  for (let i = 0; i < planilhaJson.length; i++) {
+    await googleSDK.users.insert({
+      "resource": {
+        "name": {
+          "familyName": planilhaJson[i].lastname,
+          "givenName": planilhaJson[i].firstname
+        },
+        "password": planilhaJson[i].password,
+        "primaryEmail": planilhaJson[i].email,
+        "orgUnitPath": planilhaJson[i].orgpath,
+        "changePasswordAtNextLogin": true
+      }
+    }).then(function (response) {
+      // Handle the results here (response.result has the parsed body).
+      console.log("Response", response);
+      document.getElementById('msg').innerHTML = `Status: Email ${planilhaJson[i].email} criado...`;
+    },
+      function (err) {
+        console.error("Execute error", err);
+        document.getElementById('msg').innerHTML = `Status: Email ${planilhaJson[i].email} Falhou...`;
+      });
+  };
 };
 
 async function SuspUser() {
@@ -259,7 +299,7 @@ async function freeUser() {
   email = document.getElementById("freUser").value;
   if (email == "" || email == undefined) {
     setConsole("Foi Digite email valido.");
-  }else{
+  } else {
     await googleSDK.users.update({
       "userKey": email,
       "resource": {
