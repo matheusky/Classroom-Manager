@@ -106,3 +106,8 @@ dist
 # Tokens pessoais
 src/tokens/credentials.json
 src/tokens/tokens.json
+
+# Logs e plailhas
+src/csvs/tmp/log.txt
+src/csvs/tmp/ErrosCSV.csv
+src/csvs/tmp/tmpPlan.csv
