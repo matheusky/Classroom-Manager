@@ -172,7 +172,7 @@ async function CouseDetails() {
         if (response.data.students && response.data.students.length) {
           document.getElementById("Calun").value = "";
           response.data.students.forEach((students) => {
-            document.getElementById("Calun").value += `${students.profile.name.fullName}` + ' \n';
+            document.getElementById("Calun").value += `${students.profile.name.fullName} - ID:${students.userId}` + ' \n';
             document.getElementById("Calun").scrollTop = document.getElementById("Calun").scrollHeight;
           });
         } else {

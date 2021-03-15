@@ -90,14 +90,17 @@ async function process() {
     var planilhaJson = csvToJson.fieldDelimiter(',').getJsonFromCsv(file.path);
     console.log("csv");
   };
-
+  
   var newPlain = [];
   const select1 = document.getElementById('namecolun').value;
   const select2 = document.getElementById('emailcolun').value;
   const select3 = document.getElementById('senhacolun').value;
-
+  
   const domain = document.getElementById("domopt").value;
   const orgpath = document.getElementById("orgpath").value;
+  
+  var bar = document.getElementById("Bar");
+  var barnm = document.getElementById("barnun");
 
   for (let i = 0; i < planilhaJson.length; i++) {
 
@@ -113,6 +116,9 @@ async function process() {
     };
 
     newPlain.push(tmp);
+
+    bar.style.width = Math.round(map_range(i,0,planilhaJson.length,0,100))+"%";
+    barnm.innerHTML = Math.round(map_range(i,0,planilhaJson.length,0,100))+"%";
   };
 
   const dataCSV = csvjson.toCSV(newPlain, options);
@@ -148,12 +154,12 @@ async function createEmail() {
   }).then(function (response) {
     // Handle the results here (response.result has the parsed body).
     console.log("Response", response);
-    document.getElementById('msg').innerHTML = "Status: Email criado...";
+    document.getElementById('msg').innerHTML = "Email criado com sucesso!";
   },
     function (err) {
-      console.error("Execute error", err);
-      document.getElementById('msg').innerHTML = "Status: Erro...";
-
+      //console.error("Execute error", err.message);
+      window.alert(`Ocorreu um erro:\n\n${err.message}`);
+      document.getElementById('msg').innerHTML = "Erro! Revise os dados e tente novamente...";
     });
 };
 
@@ -185,12 +191,12 @@ async function createEmails() {
       }
     }).then(function (response) {
       // Handle the results here (response.result has the parsed body).
-      console.log("Response", response);
-      document.getElementById('msg').innerHTML = `Status: Email ${planilhaJson[i].email} criado...`;
+      //console.log("Response", response);
+      setConsole(`Email ${planilhaJson[i].email} criado...`);
     },
       function (err) {
-        console.error("Execute error", err);
-        document.getElementById('msg').innerHTML = `Status: Email ${planilhaJson[i].email} Falhou...`;
+        //console.error("Execute error", err);
+        setConsole(`Email ${planilhaJson[i].email} falhou...`)
       });
   };
 };
