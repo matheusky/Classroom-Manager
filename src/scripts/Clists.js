@@ -149,7 +149,16 @@ async function CouseDetails() {
       if (response.data.teachers && response.data.teachers.length) {
         document.getElementById("Cprof").value = "";
         response.data.teachers.forEach((teachers) => {
-          document.getElementById("Cprof").value += `${teachers.profile.name.fullName}` + ' \n';
+          //---GetEmailDetails
+          googleSDK.users.get({
+            "userKey": teachers.userId
+          }).then(function (response) {
+            document.getElementById("Cprof").value += response.data.name.fullName + ' \n';
+            document.getElementById("Cprof").value += 'Email: ' + response.data.primaryEmail + ' \n';
+            document.getElementById("Cprof").value += 'Org: ' + response.data.orgUnitPath + ' \n';
+            document.getElementById("Cprof").value += '-------------------' + ' \n';
+          },function (err) { console.error("Execute error", err); });
+          //-----------
           document.getElementById("Cprof").scrollTop = document.getElementById("Cprof").scrollHeight;
         });
       } else {
@@ -172,25 +181,34 @@ async function CouseDetails() {
         if (response.data.students && response.data.students.length) {
           document.getElementById("Calun").value = "";
           response.data.students.forEach((students) => {
-            document.getElementById("Calun").value += `${students.profile.name.fullName} - ID:${students.userId}` + ' \n';
+            //---GetEmailDetails
+            googleSDK.users.get({
+              "userKey": students.userId
+            }).then(function (response) {
+              document.getElementById("Calun").value += response.data.name.fullName + ' \n';
+              document.getElementById("Calun").value += 'Email: ' + response.data.primaryEmail + ' \n';
+              document.getElementById("Calun").value += 'Org: ' + response.data.orgUnitPath + ' \n';
+              document.getElementById("Calun").value += '-------------------' + ' \n';
+            },function (err) { console.error("Execute error", err); });
+            //-----------
             document.getElementById("Calun").scrollTop = document.getElementById("Calun").scrollHeight;
-          });
-        } else {
-          document.getElementById("Calun").value = "";
-          document.getElementById("Calun").value = "Nenhum Professor na sala...";
-        };
-      },
-        function (err) {
-          console.error("Execute error", err);
-          document.getElementById("Calun").value = "";
-          document.getElementById("Calun").value = err;
         });
+  } else {
+    document.getElementById("Calun").value = "";
+    document.getElementById("Calun").value = "Nenhum Professor na sala...";
+  };
+},
+function (err) {
+  console.error("Execute error", err);
+  document.getElementById("Calun").value = "";
+  document.getElementById("Calun").value = err;
+});
   };
 };
 
 async function getStudent() {
   const aluno = document.getElementById('alun').value;
-  if (aluno == "" ||aluno == undefined ) {
+  if (aluno == "" || aluno == undefined) {
     setConsole("Digite um email valido")
   } else {
     await classroom.courses.list({
@@ -217,7 +235,7 @@ async function getStudent() {
 
 async function getTeatcher() {
   const teacher = document.getElementById('prof').value;
-  if (teacher == "" ||teacher == undefined ) {
+  if (teacher == "" || teacher == undefined) {
     setConsole("Digite um email valido")
   } else {
     await classroom.courses.list({

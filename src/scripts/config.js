@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
 });
 
 function myFunction() {
-  const txt = "https://developers.google.com/classroom/quickstart/nodejs#step_1_turn_on_the";
+  const txt = "https://developers.google.com/workspace/guides/create-project";
   navigator.clipboard.writeText(txt);
   var tooltip = document.getElementById("myTooltip");
   tooltip.innerHTML = "Link copiado!";

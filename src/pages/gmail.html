@@ -31,20 +31,24 @@
             <br>
             <div class="actions">
                 <label for="GMchecker">Verificar Email:</label>
-                <input type="text" name="GMchecker" id="GMchecker">
+                <input type="text" name="GMchecker" id="GMchecker" placeholder="usuario@domain.com">
                 <button onclick="Gcheck()">Consultar</button>
                 <br><br>
                 <label for="sususer">Suspender email:</label>
-                <input type="text" name="sususer" id="sususer">
+                <input type="text" name="sususer" id="sususer" placeholder="usuario@domain.com">
                 <button onclick="susUser()">Suspender</button>
                 <br><br>
                 <label for="freUser">liberar Email:</label>
-                <input type="text" name="freUser" id="freUser">
+                <input type="text" name="freUser" id="freUser" placeholder="usuario@domain.com">
                 <button onclick="freeUser()">Liberar</button>
+                <br><br>
+                <label for="DellUser">Excluir Email:</label>
+                <input type="text" name="DellUser" id="DellUser" placeholder="usuario@domain.com">
+                <button onclick="DellUser()">Excluir</button>
                 <br><br>
                 <hr>
                 <br>
-                <p>Tratamento de planilha:</p>
+                <p>Executar planilhas</p>
                 <br>
                 <label for="plandata">Criar emails:</label>
                 <input type="file" name="plandata" id="plandata">
@@ -52,15 +56,15 @@
                 <br><br>
                 <label for="Suser">Suspender Usuarios:</label>
                 <input type="file" name="Suser" id="Suser">
-                <button onclick="SuspUser()">Carregar</button>
+                <button onclick="SuspUsers()">Carregar</button>
                 <br><br>
                 <label for="freeUsers">Liberar Usuarios:</label>
                 <input type="file" name="freeUsers" id="freeUsers">
-                <button onclick="SuspUsers()">Carregar</button>
+                <button onclick="freeUsers()">Carregar</button>
                 <br><br>
-                <label for="DellUser">Excluir Usuarios:</label>
-                <input type="file" name="DellUser" id="DellUser">
-                <button onclick="">Carregar</button>
+                <label for="DellUsers">Excluir Usuarios:</label>
+                <input type="file" name="DellUsers" id="DellUsers">
+                <button onclick="DellUsers()">Carregar</button>
                 <br><br><br>
                 <a class="btnA" href="./gmailcreate.html" target="_blank" rel="noopener noreferrer">Criar Emails</a>
                 <a class="btnA" href="./gmailcreateplan.html" target="_blank" rel="noopener noreferrer">Gerar planilha p/ GADM</a>

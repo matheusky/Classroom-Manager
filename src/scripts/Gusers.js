@@ -131,14 +131,23 @@ async function process() {
 };
 //-------------------
 
+//---CreateEmailPage------
+
 async function createEmail() {
   const Ufrname = document.getElementById('Ufname').value;
   const Ultname = document.getElementById('Ulname').value;
   const Ugemail = document.getElementById('Uemail').value;
   const Ugpass = document.getElementById('Upass').value;
   const orgpath = document.getElementById('org').value;
+  var CP;
 
-  //console.log(Ufrname, Ultname, Ugemail, Ugpass, orgpath);
+  if (document.getElementById('Cpass').checked) {
+    CP = true;
+  }else{
+    CP = false;
+  };
+
+  //console.log(Ufrname, Ultname, Ugemail, Ugpass, orgpath, CP);
 
   await googleSDK.users.insert({
     "resource": {
@@ -149,7 +158,7 @@ async function createEmail() {
       "password": Ugpass,
       "primaryEmail": Ugemail,
       "orgUnitPath": orgpath,
-      "changePasswordAtNextLogin": true
+      "changePasswordAtNextLogin": CP
     }
   }).then(function (response) {
     // Handle the results here (response.result has the parsed body).
@@ -163,6 +172,8 @@ async function createEmail() {
     });
 };
 
+//-------------------
+
 async function createEmails() {
   const file = document.getElementById("plandata").files[0];
   var extension = file.name.split('.').pop();
@@ -170,11 +181,11 @@ async function createEmails() {
     var workbook = XLSX.readFile(file.path);
     var sheet_name_list = workbook.SheetNames;
     var planilhaJson = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
-    console.log("xlsx");
+    //console.log("xlsx");
   };
   if (extension == "csv") {
     var planilhaJson = csvToJson.fieldDelimiter(',').getJsonFromCsv(file.path);
-    console.log("csv");
+    //console.log("csv");
   };
 
   for (let i = 0; i < planilhaJson.length; i++) {
@@ -187,7 +198,7 @@ async function createEmails() {
         "password": planilhaJson[i].password,
         "primaryEmail": planilhaJson[i].email,
         "orgUnitPath": planilhaJson[i].orgpath,
-        "changePasswordAtNextLogin": true
+        "changePasswordAtNextLogin": planilhaJson[i].changePasswordAtNextLogin
       }
     }).then(function (response) {
       // Handle the results here (response.result has the parsed body).
@@ -201,7 +212,7 @@ async function createEmails() {
   };
 };
 
-async function SuspUser() {
+async function SuspUsers() {
   clearConsole();
   setConsole("Iniciando...");
   const file = document.getElementById("Suser").files[0];
@@ -239,10 +250,10 @@ async function SuspUser() {
   };
 };
 
-async function DellUser() {
+async function DellUsers() {
   clearConsole();
   setConsole("Iniciando...");
-  const file = document.getElementById("DellUser").files[0];
+  const file = document.getElementById("DellUsers").files[0];
   var extension = file.name.split('.').pop();
   if (extension == "xlsx") {
     var workbook = XLSX.readFile(file.path);
@@ -276,7 +287,7 @@ async function DellUser() {
 
 async function susUser() {
   clearConsole();
-  email = document.getElementById("sususer").value;
+  var email = document.getElementById("sususer").value;
   if (email == "" || email == undefined) {
     setConsole("Foi Digite email valido.");
   } else {
@@ -291,7 +302,6 @@ async function susUser() {
       setConsole(`Email:${email}`);
       setConsole(`Nome:${response.data.name.fullName}`);
       setConsole("Foi suspenso.");
-      setConsole("---------------------------------------------");
     },
       function (err) {
         //console.error("Execute error", err);
@@ -302,7 +312,7 @@ async function susUser() {
 
 async function freeUser() {
   clearConsole();
-  email = document.getElementById("freUser").value;
+  var email = document.getElementById("freUser").value;
   if (email == "" || email == undefined) {
     setConsole("Foi Digite email valido.");
   } else {
@@ -317,7 +327,28 @@ async function freeUser() {
       setConsole(`Email:${email}`);
       setConsole(`Nome:${response.data.name.fullName}`);
       setConsole("Foi liberado.");
-      setConsole("---------------------------------------------");
+    },
+      function (err) {
+        //console.error("Execute error", err);
+        setConsole(`Erro:${err.message}`);
+      });
+  };
+};
+
+async function DellUser() {
+  clearConsole();
+  var email = document.getElementById("DellUser").value;
+  if (email == "" || email == undefined) {
+    setConsole("Foi Digite email valido.");
+  } else {
+    await googleSDK.users.delete({
+      "userKey": "email"
+    }).then(function (response) {
+      // Handle the results here (response.result has the parsed body).
+      //console.log("Response", response);
+      setConsole(`Email:${email}`);
+      setConsole(`Nome:${response.data.name.fullName}`);
+      setConsole("Foi excluido.");
     },
       function (err) {
         //console.error("Execute error", err);

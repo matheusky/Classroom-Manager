@@ -1,2 +1,2 @@
-firstname,lastname,email,password,orgpath
-primeiro nome,ultimo nome,email,senha,pasta de org "/" padrão
+firstname,lastname,email,password,orgpath,changePasswordAtNextLogin
+primeiro nome,ultimo nome,email,senha,pasta de org padrão é "/" sem aspas,true ou false
