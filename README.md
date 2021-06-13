@@ -1,5 +1,6 @@
-# Classroom-Manager
+# :no_entry:Projeto arquivado / Archived project:no_entry:
 
+# Classroom-Manager
 Simples gerenciador da Plataforma Google Classroom e Gmail, com ele é possível adicionar ou remover alunos, professores, salas(Turma) e emails usando planilhas CSV e XLSX.
 
 # Requisitos
