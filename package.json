@@ -32,6 +32,6 @@
     "convert-csv-to-json": "0.0.15",
     "csvjson": "^5.1.0",
     "googleapis": "^59.0.0",
-    "xlsx": "^0.16.9"
+    "xlsx": ">=0.17.0"
   }
 }
